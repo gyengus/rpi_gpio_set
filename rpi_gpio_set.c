@@ -1,23 +1,20 @@
-// After installing bcm2835, you can build this 
-// with something like:
-// gcc -o blink blink.c -l bcm2835
+/**
+ * RPI GPIO reader/writer example
+ * @author Gyengus(Tm)
+ * @link http://gyengus.hu
+ * Build:  gcc -o bin/rpi_gpi_set rpi_gpio_set.c -l bcm2835
+ * Usage: rpi_gpio_set PIN 0|1|t|?
+ */
 
 #include <string.h>
 #include <stdio.h>
 #include <bcm2835.h>
 
-//#define PIN RPI_GPIO_P1_11
-
-// fájlnév PIN 0/1/t/?
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     uint8_t PIN;
-
-    //printf("%s %s\n", argv[1], argv[2]);
 
     if (strcmp(argv[1], "11") == 0) {
 	PIN = RPI_GPIO_P1_11;
-	//printf("11 ok\n");
     } else if (strcmp(argv[1], "15") == 0) {
 	PIN = RPI_GPIO_P1_15;
     } else if (strcmp(argv[1], "16") == 0) {
@@ -29,7 +26,7 @@ int main(int argc, char *argv[])
     }
     // If you call this, it will not actually access the GPIO
     // Use for testing
-//    bcm2835_set_debug(1);
+    //bcm2835_set_debug(1);
 
     if (!bcm2835_init()) {
 	printf("Hiba!\n");
@@ -40,27 +37,23 @@ int main(int argc, char *argv[])
     bcm2835_gpio_fsel(PIN, BCM2835_GPIO_FSEL_OUTP);
 
     if (argv[2][0] == '0') {
-        // ki
+        // To low
 	bcm2835_gpio_write(PIN, LOW);
-	//printf("ki\n");
     } else if (argv[2][0] == '1') {
-	// be
+	// To high
 	bcm2835_gpio_write(PIN, HIGH);
-	//printf("be\n");
     } else if (argv[2][0] == 't') {
-	// toggle
+	// Toggle PIN
 	if (bcm2835_gpio_lev(PIN)) {
 	    bcm2835_gpio_write(PIN, LOW);
         } else {
 	    bcm2835_gpio_write(PIN, HIGH);
 	}
     } else if (argv[2][0] == '?') {
-	// állapot lekérdezés
-	//printf("?\n");
+	// Retrieve PIN status
 	printf("%d", bcm2835_gpio_lev(PIN));
     }
 
     bcm2835_close();
     return 0;
-}
-
+} // main
