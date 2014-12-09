@@ -6,7 +6,7 @@ Raspberry Pi GPIO reader/writer
 <h3>Requirements</h3>
 
 <ul>
-<li>C library for Broadcom BCM 2835 as used in Raspberry Pi</li>
+<li>C library for Broadcom BCM 2835 as used in Raspberry Pi (<a href='http://www.airspayce.com/mikem/bcm2835/'>link</a>)</li>
 <li>root access to run, otherwise You can not access the Raspberry Pi GPIOs</li>
 </ul>
 
