@@ -6,7 +6,7 @@ Raspberry Pi GPIO reader/writer
 <h3>Requirements</h3>
 
 <ul>
-<li>C library for Broadcom BCM 2835 as used in Raspberry Pi (<a href='http://www.airspayce.com/mikem/bcm2835/'>link</a>)</li>
+<li>C library for Broadcom BCM 2835 as used in Raspberry Pi (<a href='http://www.airspayce.com/mikem/bcm2835/' target='_blank'>link</a>)</li>
 <li>root access to run, otherwise You can not access the Raspberry Pi GPIOs</li>
 </ul>
 
@@ -21,7 +21,7 @@ $ gcc -o bin/rpi_gpio_set rpi_gpio_set.c -l bcm2835
 <pre>
 $ sudo bin/rpi_gpio_set PIN 0|1|t|?
 </pre>
-PIN	BCM 2835 pin number and <b>not</b> the Raspberry Pi pin number<br />
+PIN BCM 2835 pin number and <b>not</b> the Raspberry Pi pin number<br />
 0	set PIN state to low<br />
 1	set PIN state to high<br />
 t	toggle PIN state<br />
