@@ -21,7 +21,7 @@ $ gcc -o bin/rpi_gpio_set rpi_gpio_set.c -l bcm2835
 <pre>
 $ sudo bin/rpi_gpio_set PIN 0|1|t|?
 </pre>
-PIN BCM 2835 pin number and <b>not</b> the Raspberry Pi pin number<br />
+PIN <a href='http://www.airspayce.com/mikem/bcm2835/group__constants.html#ga63c029bd6500167152db4e57736d0939' target='_blank'>click here</a> for pin assignment<br />
 0	set PIN state to low<br />
 1	set PIN state to high<br />
 t	toggle PIN state<br />
