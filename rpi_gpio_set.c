@@ -3,7 +3,7 @@
  * @author Gyengus(Tm)
  * @link http://gyengus.hu
  * Build:  gcc -o bin/rpi_gpi_set rpi_gpio_set.c -l bcm2835
- * Usage: rpi_gpio_set PIN 0|1|t|?
+ * Usage: sudo rpi_gpio_set PIN 0|1|t|?
  */
 
 #include <string.h>
