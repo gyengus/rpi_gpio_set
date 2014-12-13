@@ -26,3 +26,5 @@ PIN <a href='http://www.airspayce.com/mikem/bcm2835/group__constants.html#ga63c0
 1	set PIN state to high<br />
 t	toggle PIN state<br />
 ?	read PIN state<br />
+
+For more info <a href='http://gyengus.hu/2014/12/raspberry-pi-gpio-vezerlese-c-nyelven/?utm_source=github_repo_rpi_gpio_set' target='_blank'>click here</a>.
